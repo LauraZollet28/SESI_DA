@@ -48,6 +48,7 @@ body {
     width: 500px;
     border-radius: 52px;
     margin: 10px;
+    cursor: pointer;
 }
 
 .btn img {
@@ -56,15 +57,29 @@ body {
     margin-right: 30px;
 }
 
-.entrar-btn{
+.entrar-btn {
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 300px;
     height: 50px;
     background-color: black;
     border-radius: 50px;
-    text-align: center;
     font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 1px solid, black;
+    text-decoration: none;
 }
 
-.entrar-btn p{
-    color: white;
+.entrar-btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid, black;
+}
+
+.saiba-mais{
+    margin-top: -125px;
 }
