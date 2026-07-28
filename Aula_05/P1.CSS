@@ -1,0 +1,70 @@
+body {
+    color: ghostwhite;
+}
+
+.tela {
+    display: flex;
+    height: 96vh;
+
+}
+
+.le {
+    width: 50%;
+    height: 900px;
+    text-align: center;
+    background-image: url(pug.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.BV {
+    text-align: center;
+    color: black;
+    font-family: sans-serif;
+    font-weight: 700px;
+    font-size: 300%;
+}
+
+.ld {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ld h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.btn {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: solid 1px black;
+    width: 500px;
+    border-radius: 52px;
+    margin: 10px;
+}
+
+.btn img {
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
+
+.entrar-btn{
+    width: 300px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.entrar-btn p{
+    color: white;
+}
