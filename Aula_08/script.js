@@ -1,4 +1,4 @@
-function login() {
+vfunction login() {
     // 1º Acessar o valor digitado nos campos USUARIO e SENHA
     const cmapo_usuario = document.getElementById("usuario").value;
     const campo_senha = document.getElementById("senha").value;
@@ -18,46 +18,57 @@ function login() {
 
 
 function cadastro() {
-        // 1º Carregar os campos de cadastro
-        // NOME, USUÁRIO, SENHA, PALAVRA-PASSE
 
+    let nome = document.getElementById("nome").value;
+    let usuario = document.getElementById("usuario").value;
+    let senha = document.getElementById("senha").value;
+    let palavraPasse = document.getElementById("palavra-passe").value;
 
-        // 2º Cadastrar os dados no localStorage
-        // Ex.: localStorage.setItem("NOME", valor)
-        // OBS.: "valor" é o dado que foi carregado no passo 1
+    localStorage.setItem("nome", nome);
+    localStorage.setItem("usuario", usuario);
+    localStorage.setItem("senha", senha);
+    localStorage.setItem("palavra-passe", palavraPasse);
 
-
-        // 3º Redirecionar para a tela de login
+    window.location.href = "login.html";
 }
 
 
 function recuperar_senha() {
-    // 1º Carregar os valores dos campos NOME e PALAVRA-PASSE
 
+    let nomeDigitado = document.getElementById("nome").value;
+    let senhaDigitada = document.getElementById("senha").value;
 
-// 2º Buscar no localStorage os valores de NOME e PALAVRA-PASSE
+    let nomeArmazenado = localStorage.getItem("nome");
+    let senhaArnazenada = localStorage.getItem("senha");
 
+    let erros = Number(localStorage.getItem("erros_recuperacao"))
 
-// 3º Comparar se os valores carregados nos campos da tela
-// são compatíveis com os valores armazenados no localStorage.
-//
-// Se forem iguais, exibir a senha na tela ou em um alert.
-//
-// Se forem diferentes, notificar o usuário na tela ou em um alert
-// informando que os dados não são compatíveis.
-// Além disso, limpar os campos de entrada (inputs).
+    if (erros >= 3) {
+    alert("Você atingiu o limite de tentativas.")
+    document.getElementById("nome").disabled = true;
+    document.getElementById("senha").disabled = true;
+    return;
+    }
 
+    if (nomeDigitado === nomeArmazenado && senhaDigitada === senhaArnazenada) {
 
-// DESAFIO SEM I.AAAAA:
-//
-// Vocês devem implementar um controle de tentativas para a recuperação de senha.
-//
-// REGRAS:
-// Vocês devem validar a quantidade de tentativas incorretas
-// de NOME e PALAVRA-PASSE.
-//
-// Quando o usuário errar 3 vezes, vocês devem bloquear os campos (inputs)
-// e impedir que o usuário realize uma nova tentativa de recuperação de senha.
-//
-// Lembrem-se de salvar a quantidade de erros no localStorage.
+        alert("Senha recuperada: " + senhaArmazenada);
+
+    } else {
+        erros ++;
+
+        localStorage.setItem("erros_recuperacao", erros);
+
+        alert("Nome ou senha incorretos. Tentativa " + erros "de 3.")
+
+        document.getElementById ("nome").dissabled = true;
+        document.getElementById ("senha").dissabled = true;
+
+        if (erros >= 3) {
+            document.getElementById("nome").disabled = true;
+            document.getElementById("senha").disabled = true;
+        }
+    }
 }
+
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Chamados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>📋 Sistema de Chamados</h1>
+            <p>Gerencie solicitações e atendimentos</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="cards">
+            <div class="card">
+                <span>Total</span>
+                <strong id="totalChamados">0</strong>
+            </div>
+
+            <div class="card aberto">
+                <span>Abertos</span>
+                <strong id="chamadosAbertos">0</strong>
+            </div>
+
+            <div class="card andamento">
+                <span>Em andamento</span>
+                <strong id="chamadosAndamento">0</strong>
+            </div>
+
+            <div class="card resolvido">
+                <span>Resolvidos</span>
+                <strong id="chamadosResolvidos">0</strong>
+            </div>
+        </section>
+
+        <section class="painel">
+            <h2>Novo chamado</h2>
+
+            <form id="formChamado">
+
+                <div class="campo">
+                    <label for="titulo">Título</label>
+                    <input
+                        type="text"
+                        id="titulo"
+                        placeholder="Ex.: Computador não liga"
+                        required
+                    >
+                </div>
+
+                <div class="linha">
+                    <div class="campo">
+                        <label for="solicitante">Solicitante</label>
+                        <input
+                            type="text"
+                            id="solicitante"
+                            placeholder="Nome do solicitante"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="categoria">Categoria</label>
+                        <select id="categoria" required>
+                            <option value="">Selecione</option>
+                            <option value="Hardware">Hardware</option>
+                            <option value="Software">Software</option>
+                            <option value="Rede">Rede</option>
+                            <option value="Acesso">Acesso</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="prioridade">Prioridade</label>
+                        <select id="prioridade" required>
+                            <option value="">Selecione</option>
+                            <option value="Baixa">Baixa</option>
+                            <option value="Média">Média</option>
+                            <option value="Alta">Alta</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição</label>
+                    <textarea
+                        id="descricao"
+                        rows="4"
+                        placeholder="Descreva o problema..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn-principal">
+                    + Abrir chamado
+                </button>
+
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="topo-lista">
+                <div>
+                    <h2>Chamados</h2>
+                    <p id="mensagemLista">Nenhum chamado cadastrado.</p>
+                </div>
+
+                <select id="filtroStatus">
+                    <option value="Todos">Todos os status</option>
+                    <option value="Aberto">Aberto</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Resolvido">Resolvido</option>
+                </select>
+            </div>
+
+            <div id="listaChamados" class="lista-chamados"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Sistema de Chamados &copy; 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
