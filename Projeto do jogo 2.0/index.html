@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Presença Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Controle de Presença</h1>
+        <p>Registro de presença dos alunos</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Cadastrar aluno</h2>
+
+            <div class="formulario">
+                <input type="text" id="nomeAluno" placeholder="Nome do aluno">
+                <input type="text" id="turmaAluno" placeholder="Turma">
+                <button id="btnCadastrar">Cadastrar aluno</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Registrar presença</h2>
+
+            <div class="formulario">
+                <select id="alunoPresenca">
+                    <option value="">Selecione um aluno</option>
+                </select>
+
+                <input type="date" id="dataPresenca">
+
+                <select id="situacao">
+                    <option value="Presente">Presente</option>
+                    <option value="Falta">Falta</option>
+                </select>
+
+                <button id="btnRegistrar">Registrar</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Alunos cadastrados</h2>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Turma</th>
+                            <th>Presenças</th>
+                            <th>Faltas</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaAlunos"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Histórico de presença</h2>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aluno</th>
+                            <th>Data</th>
+                            <th>Situação</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="historico"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Sistema de Controle de Presença Escolar</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
